@@ -152,7 +152,7 @@ pub(crate) fn div_mod_seq(pos: u32, shape: &Sequence<FastDivmod<u32>>) -> (u32, 
 
 impl<R: Runtime> TmaIm2colLayoutLaunch<R> {
     pub fn from_args(
-        client: &ComputeClient<R>,
+        _client: &ComputeClient<R>,
         problem: &ConvolutionProblem,
         check_kernel: bool,
     ) -> Self {

@@ -351,7 +351,7 @@ impl Layout for NoopLayout {
 
 impl<R: Runtime> BatchLayoutLaunch<R> {
     pub fn from_handle(
-        client: &ComputeClient<R>,
+        _client: &ComputeClient<R>,
         handle: &TensorBinding<R>,
         problem: &MatmulProblem,
     ) -> Self {

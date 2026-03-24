@@ -91,15 +91,11 @@ impl<R: Runtime> OutLayoutLaunch<R> {
     }
 
     fn from_args_fprop(
-        client: &ComputeClient<R>,
+        _client: &ComputeClient<R>,
         problem: &ConvolutionProblem,
         config: GlobalLayoutConfig,
     ) -> Self {
-        let shape_out = problem
-            .out_shape
-            .iter()
-            .map(|s| *s as u32)
-            .collect();
+        let shape_out = problem.out_shape.iter().map(|s| *s as u32).collect();
         let shape_m = problem.m as u32;
         let shape_n = problem.n as u32;
 
@@ -107,15 +103,11 @@ impl<R: Runtime> OutLayoutLaunch<R> {
     }
 
     fn from_args_dgrad(
-        client: &ComputeClient<R>,
+        _client: &ComputeClient<R>,
         problem: &ConvolutionProblem,
         config: GlobalLayoutConfig,
     ) -> Self {
-        let shape = problem
-            .in_shape
-            .iter()
-            .map(|s| *s as u32)
-            .collect();
+        let shape = problem.in_shape.iter().map(|s| *s as u32).collect();
         let shape_m = problem.m as u32;
         let shape_n = problem.n as u32;
 
@@ -123,15 +115,11 @@ impl<R: Runtime> OutLayoutLaunch<R> {
     }
 
     fn from_args_wgrad(
-        client: &ComputeClient<R>,
+        _client: &ComputeClient<R>,
         problem: &ConvolutionProblem,
         config: GlobalLayoutConfig,
     ) -> Self {
-        let shape_out = problem
-            .out_shape
-            .iter()
-            .map(|s| *s as u32)
-            .collect();
+        let shape_out = problem.out_shape.iter().map(|s| *s as u32).collect();
         let shape_m = problem.m as u32;
         let shape_k = problem.k as u32;
 

@@ -141,16 +141,12 @@ impl<R: Runtime> Im2colLayoutLaunch<R> {
     }
 
     fn from_args_fprop(
-        client: &ComputeClient<R>,
+        _client: &ComputeClient<R>,
         problem: &ConvolutionProblem,
         params: ConvolutionParams,
         config: GlobalLayoutConfig,
     ) -> Self {
-        let shape_out = problem
-            .out_shape
-            .iter()
-            .map(|s| *s as u32)
-            .collect();
+        let shape_out = problem.out_shape.iter().map(|s| *s as u32).collect();
 
         let padded_channels = problem.padded_channels as u32;
 
@@ -161,16 +157,12 @@ impl<R: Runtime> Im2colLayoutLaunch<R> {
     }
 
     fn from_args_dgrad(
-        client: &ComputeClient<R>,
+        _client: &ComputeClient<R>,
         problem: &ConvolutionProblem,
         params: ConvolutionParams,
         config: GlobalLayoutConfig,
     ) -> Self {
-        let shape = problem
-            .in_shape
-            .iter()
-            .map(|s| *s as u32)
-            .collect();
+        let shape = problem.in_shape.iter().map(|s| *s as u32).collect();
 
         let padded_channels = problem.padded_channels as u32;
 
@@ -181,16 +173,12 @@ impl<R: Runtime> Im2colLayoutLaunch<R> {
     }
 
     fn from_args_wgrad(
-        client: &ComputeClient<R>,
+        _client: &ComputeClient<R>,
         problem: &ConvolutionProblem,
         params: ConvolutionParams,
         config: GlobalLayoutConfig,
     ) -> Self {
-        let shape_out = problem
-            .out_shape
-            .iter()
-            .map(|s| *s as u32)
-            .collect();
+        let shape_out = problem.out_shape.iter().map(|s| *s as u32).collect();
 
         let padded_channels = problem.padded_channels as u32;
 

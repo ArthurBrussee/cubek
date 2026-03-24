@@ -122,7 +122,7 @@ impl<R: Runtime> WeightLayoutLaunch<R> {
     }
 
     fn from_args_rhs(
-        client: &ComputeClient<R>,
+        _client: &ComputeClient<R>,
         problem: &ConvolutionProblem,
         config: GlobalLayoutConfig,
     ) -> Self {
@@ -136,7 +136,7 @@ impl<R: Runtime> WeightLayoutLaunch<R> {
     }
 
     fn from_args_out(
-        client: &ComputeClient<R>,
+        _client: &ComputeClient<R>,
         problem: &ConvolutionProblem,
         config: GlobalLayoutConfig,
     ) -> Self {
